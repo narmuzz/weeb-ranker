@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Rank from "./Rank";
-import AccountInput from "./AccountInput";
-import ManualInput from "./ManualInput";
+import ButtonInput from "./ButtonInput";
 
 class WeebRanker extends Component {
   state = { meanScore: null };
@@ -15,8 +14,7 @@ class WeebRanker extends Component {
   render() {
     return (
       <div>
-        <AccountInput onChangeMeanScore={this.changeMeanScore} />
-        <ManualInput onChangeMeanScore={this.changeMeanScore} />
+        <ButtonInput onChangeMeanScore={this.changeMeanScore} />
         <Rank meanScore={this.state.meanScore} />
       </div>
     );

@@ -1,21 +1,24 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
-import "./App.css";
 import WeebRanker from "./WeebRanker";
 import About from "./About";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 
 function App() {
   return (
     <Router>
-      <nav className="navigation">
-        <Link className="navigation-button" to="/">
-          Weeb Ranker
-        </Link>
-        <Link className="navigation-button" to="/about">
-          About
-        </Link>
-      </nav>
+      <ul class="nav nav-pills justify-content-center">
+        <li class="nav-item">
+          <NavLink className="nav-link" exact to="/" activeClassName="active">
+            Weeb Ranker
+          </NavLink>
+        </li>
+        <li class="nav-item">
+          <NavLink className="nav-link" to="/about" activeClassName="active">
+            About
+          </NavLink>
+        </li>
+      </ul>
 
       <main className="app">
         <Route path="/" exact component={WeebRanker} />
